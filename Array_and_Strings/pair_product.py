@@ -28,3 +28,15 @@ def pair_product(numbers, target_sum):
 # set a variable complement where we get the target number and divivde it with the curren num
 # if the complement is in the previous_numbers variable then we know thats the complement to the target sum
 #if its not then we add the current num to the variable wit its current index
+
+
+### test cases
+
+print(pair_product([3, 2, 5, 4, 1], 8)) # -> (1, 3)
+pair_product([3, 2, 5, 4, 1], 10) # -> (1, 2)
+pair_product([4, 7, 9, 2, 5, 1], 5) # -> (4, 5)
+pair_product([4, 7, 9, 2, 5, 1], 35) # -> (1, 4)
+pair_product([3, 2, 5, 4, 1], 10) # -> (1, 2)
+pair_product([4, 6, 8, 2], 16) # -> (2, 3)
+numbers = [ i for i in range(1, 6001) ]
+pair_product(numbers, 35994000) # -> (5998, 5999) 
