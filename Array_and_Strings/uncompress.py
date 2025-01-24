@@ -36,3 +36,11 @@ To start, we create a variable numbers containing all the digits from 0 to 9, an
 	5.	Final Output:
 	•	After the loop completes, result contains all the expanded characters, and we use ''.join(result) to combine them into a single string, which is then returned.
 """
+
+
+uncompress("2c3a1t") # -> 'ccaaat'
+uncompress("4s2b") # -> 'ssssbb'
+uncompress("2p1o5p") # -> 'ppoppppp'
+uncompress("3n12e2z") # -> 'nnneeeeeeeeeeeezz'
+uncompress("127y") # -> 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+

@@ -39,4 +39,4 @@ pair_product([4, 7, 9, 2, 5, 1], 35) # -> (1, 4)
 pair_product([3, 2, 5, 4, 1], 10) # -> (1, 2)
 pair_product([4, 6, 8, 2], 16) # -> (2, 3)
 numbers = [ i for i in range(1, 6001) ]
-pair_product(numbers, 35994000) # -> (5998, 5999) 
+print(pair_product(numbers, 35994000)) # -> (5998, 5999) 
