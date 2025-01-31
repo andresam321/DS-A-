@@ -23,12 +23,12 @@
 #   return total
 
 
-def tree_sum(root):
-  total = 0
-  if not root:
-    return 0
+# def tree_sum(root):
+#   total = 0
+#   if not root:
+#     return 0
 
-  return root.val + tree_sum(root.left) + tree_sum(root.right)
+#   return root.val + tree_sum(root.left) + tree_sum(root.right)
 
 
 # def depth_first_values(root):
@@ -40,26 +40,26 @@ def tree_sum(root):
 #   return [root.val, *left_values, *right_values]
 
 
-# from collections import deque
+from collections import deque
 
-# def breadth_first_values(root):
-#   if not root:
-#     return []
+def breadth_first_values(root):
+  if not root:
+    return []
 
-#   queue = deque([root])
-#   values = []
+  queue = deque([root])
+  values = []
 
-#   while queue:
-#     node = queue.popleft()
+  while queue:
+    node = queue.popleft()
 
-#     values.append(node.val)
+    values.append(node.val)
 
-#     if node.left:
-#       queue.append(node.left)
+    if node.left:
+      queue.append(node.left)
 
-#     if node.right:
-#       queue.append(node.right)
-#   return values
+    if node.right:
+      queue.append(node.right)
+  return values
 
 ###### TEST CASES #####
 

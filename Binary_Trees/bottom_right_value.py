@@ -6,11 +6,11 @@
 
 from collections import deque
 
-def bottom_right_value(root):
+def bottom_right_value(root): # , , 4, -2, 1
   queue = deque([root])
   while queue:
     current = queue.popleft()
-
+    
     if current.left is not None:
       queue.append(current.left)
       
@@ -19,9 +19,6 @@ def bottom_right_value(root):
 
 
   return current.val
-
-
-
 ### test cases ### 
 
 # a = Node(3)

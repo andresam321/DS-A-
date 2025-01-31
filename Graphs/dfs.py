@@ -11,3 +11,14 @@ def dfs_iterative(graph, start):
             if neighbor not in visited:
                 stack.append(neighbor)
                 visited.add(neighbor)
+
+graph = {
+  'f': ['g', 'i'],
+  'g': ['h'],
+  'h': [],
+  'i': ['g', 'k'],
+  'j': ['i'],
+  'k': []
+}
+
+print(dfs_iterative(graph, 'f'))

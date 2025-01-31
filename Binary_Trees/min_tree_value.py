@@ -6,21 +6,21 @@
 
 from collections import deque
 
-# def tree_min_value(root):
-#   list_of_val = []
-#   queue = deque([root])
-#   while queue:
-#     current = queue.popleft()
-#     list_of_val.append(current.val)
+def tree_min_value(root):
+  list_of_val = []
+  queue = deque([root])
+  while queue:
+    current = queue.popleft()
+    list_of_val.append(current.val)
 
-#     if current.right is not None:
-#       queue.append(current.right)
+    if current.right is not None:
+      queue.append(current.right)
 
-#     if current.left is not None:
-#       queue.append(current.left)
+    if current.left is not None:
+      queue.append(current.left)
     
-#   print(list_of_val)
-#   return min(list_of_val)
+  print(list_of_val)
+  return min(list_of_val)
 
 
 # def tree_min_value(root): # 3,11,4,4,-2, 1
@@ -55,14 +55,14 @@ from collections import deque
 #   return smallest
 
 
-def tree_min_value(root):
-  if root is None: 
-    return float('inf')
+# def tree_min_value(root):
+#   if root is None: 
+#     return float('inf')
 
-  left_min = tree_min_value(root.left)
-  right_min = tree_min_value(root.right)
+#   left_min = tree_min_value(root.left)
+#   right_min = tree_min_value(root.right)
 
-  return min(root.val,left_min, right_min)
+#   return min(root.val,left_min, right_min)
 
 
 

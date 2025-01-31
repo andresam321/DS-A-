@@ -1,5 +1,6 @@
 def compress(s): #compress('ssssbbz') # -> '4s2bz'
-  s += '!'
+  if not s:
+    return ""
   result = []
   i = 0
   j = 0
@@ -18,7 +19,8 @@ def compress(s): #compress('ssssbbz') # -> '4s2bz'
   return ''.join(result)
 
       
-  pass # todo
+compress('ccaaatsss') # -> '2c3at3s'
+ 
 
 """
 	1.	Initial Setup:

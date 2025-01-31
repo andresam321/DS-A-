@@ -1,11 +1,11 @@
-def tree_value_count(root, target):
+# def tree_value_count(root, target):
  
-  if root is None:
-    return 0 
+#   if root is None:
+#     return 0 
 
-  count = 1 if root.val == target else 0
+#   count = 1 if root.val == target else 0
 
-  return count + tree_value_count(root.left, target) + tree_value_count(root.right,target)
+#   return count + tree_value_count(root.left, target) + tree_value_count(root.right,target)
 
 
 
@@ -16,25 +16,25 @@ def tree_value_count(root, target):
 #     self.left = None
 #     self.right = None
 
-# def tree_value_count(root, target):
-#   if root is None:
-#     return 0
-#   count = 0
-#   stack = [root]
-#   while stack:
-#     current = stack.pop()
+def tree_value_count(root, target):
+  if root is None:
+    return 0
+  count = 0
+  stack = [root]
+  while stack:
+    current = stack.pop()
 
-#     if current.val == target:
-#       count += 1
+    if current.val == target:
+      count += 1
 
 
-#     if current.right is not None:
-#       stack.append(current.right)
+    if current.right is not None:
+      stack.append(current.right)
 
-#     if current.left is not None:
-#       stack.append(current.left)
+    if current.left is not None:
+      stack.append(current.left)
 
-#   return count
+  return count
 
 
 

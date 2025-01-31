@@ -4,32 +4,32 @@
 #     self.left = None
 #     self.right = None
 
-# def how_high(node):
-#   if node is None:
-#     return -1
-#   stack = [(node, 0)]
-#   max_depth = -1
-#   while stack:
-#     current, depth = stack.pop()
-
-#     max_depth = max(max_depth,depth)
-#     if current.right is not None:
-#       stack.append((current.right, depth + 1))
-
-#     if current.left is not None:
-#       stack.append((current.left, depth + 1))
-
-#   return max_depth
-
-# 0 0 0 0  0  0
-def how_high(node): 
+def how_high(node):
   if node is None:
     return -1
+  stack = [(node, 0)]
+  max_depth = -1
+  while stack:
+    current, depth = stack.pop()
 
-  left_height = how_high(node.left) # d
-  right_height = how_high(node.right) # e
-  return 1 + max(left_height, right_height)
-                    #-1         #-1        = 0
+    max_depth = max(max_depth,depth)
+    if current.right is not None:
+      stack.append((current.right, depth + 1))
+
+    if current.left is not None:
+      stack.append((current.left, depth + 1))
+
+  return max_depth
+
+# 0 0 0 0  0  0
+# def how_high(node): 
+#   if node is None:
+#     return -1
+
+#   left_height = how_high(node.left) # d
+#   right_height = how_high(node.right) # e
+#   return 1 + max(left_height, right_height)
+#                     #-1         #-1        = 0
                     
 
 ### test cases ###

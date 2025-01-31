@@ -7,10 +7,22 @@ def breadth_first(graph, start):
     visited = set([start])
     
     while queue:
-        queue = queue.popleft()
-        print(queue)
-        while queue:
-            for neighbor in graph[queue]:
-                if neighbor not in visited:
-                    queue.append(neighbor)
-                    visited.add(neighbor)
+        node = queue.popleft()  # Pop an element from the front of the queue
+        print(node)
+        
+        for neighbor in graph[node]:  # Go through neighbors
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)  # Append unvisited neighbors
+
+
+graph = {
+  'f': ['g', 'i'],
+  'g': ['h'],
+  'h': [],
+  'i': ['g', 'k'],
+  'j': ['i'],
+  'k': []
+}
+
+print(breadth_first(graph, 'f'))
