@@ -11,7 +11,7 @@ def bottom_right_value(root): # , , 4, -2, 1
   while queue:
     current = queue.popleft()
     
-    if current.left is not None:
+    if current.left is not None:  
       queue.append(current.left)
       
     if current.right is not None:

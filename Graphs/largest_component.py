@@ -34,7 +34,35 @@ def explore_size(graph, node, visited):
 
   return size
 
+from collections import deque
+def largest_component(graph):
+  largest = 0
+  visited = set()
+## first it grades the first node (key) of the dictionary
+  for node in graph:
+    # then it checks if its been visitied by calling the explore function, and keep checking the length of each node coneected
+    size = explore(graph, node, visited)
+    if size > largest:
+      #initalize largest at 0 that way if theres anything bigger it can be replace
+      largest = size
+  return largest
 
+def explore(graph, node, visited):
+  # this helper functions check for its visited to avoid infinite looping and also checks the neighbors of node
+  # bby doing the bfs 
+  if node in visited:
+    return 0
+  queue = deque([node])
+  visited.add(node)
+  size = 1
+  while queue:
+    current = queue.popleft()
+    for neighbor in graph[current]:
+      if neighbor not in visited:
+          visited.add(neighbor)
+          queue.append(neighbor)
+          size += 1
+  return size
 ### test cases ###
 
 largest_component({

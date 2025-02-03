@@ -57,4 +57,4 @@ c.right = f
 #  / \      \
 # 4   -2     1
 
-print(tree_try(a)) 
+print(tree_try(a)) # [3, 11, 4, 4, -2, 1]

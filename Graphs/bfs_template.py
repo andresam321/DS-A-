@@ -1,5 +1,21 @@
 ##fifo, first in first out , queue
+'''
+Using a list (default Python list):
 
+Adding an element (append): O(1).
+Removing an element (pop from the left): O(n).
+In a standard list, removing an element from the front (pop(0)) 
+requires shifting all the remaining elements one position to the left, 
+which is an O(n) operation. This becomes inefficient as the number of nodes increases.
+Using deque from the collections library:
+
+Adding an element (append): O(1).
+Removing an element (popleft): O(1).
+deque (short for "double-ended queue") is optimized for both 
+appending at the end and removing from the front in constant time (O(1)).
+
+
+'''
 from collections import deque
 
 def breadth_first(graph, start):
