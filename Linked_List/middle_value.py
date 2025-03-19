@@ -8,7 +8,8 @@ def middle_value(head):
   result = []
   while current is not None:
     result.append(current.val)
-    current = current.next 
+    current = current.next
+    
   print(result)
   mid_idx = len(result) // 2
   print(mid_idx)
