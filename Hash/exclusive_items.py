@@ -44,5 +44,8 @@ def exclusive_items(a, b):
 
   return difference
 
+def exclusive_items(a, b):
+    return list(set(a) ^ set(b))  # ^ is symmetric difference operator
+
 exclusive_items([2,4,6], [4,2]) # -> [6]
 exclusive_items([0,1,2], [10,11]) # -> [0,1,2,10,11]
