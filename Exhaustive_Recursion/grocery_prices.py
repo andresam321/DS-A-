@@ -1,24 +1,28 @@
 def grocery_budget(grocery_list, budget):
-  
-  if budget < 0:
-    return []
+    print(f"\nCALL: grocery_list={grocery_list}, budget={budget}")
 
-  if not grocery_list:
-    return [[]]
+    if budget < 0:
+        print("→ Over budget! Returning []")
+        return []
 
-  all_lists = []
-  
-  current_item_name, current_item_price = grocery_list[0]
-  # print(grocery_list[0])
-  # print(current_item_price)
-  for list_with_current_item in grocery_budget(grocery_list[1:], budget - current_item_price):
-    list_with_current_item.append(current_item_name)
-    all_lists.append(list_with_current_item)
+    if not grocery_list:
+        print("→ Reached end of list. Returning [[]]")
+        return [[]]
 
-  lists_without_current_item = grocery_budget(grocery_list[1:], budget)
-  all_lists += lists_without_current_item
-  
-  return all_lists
+    all_lists = []
+    current_item_name, current_item_price = grocery_list[0]
+
+    print(f"Including '{current_item_name}' (cost: {current_item_price})")
+    for list_with_current_item in grocery_budget(grocery_list[1:], budget - current_item_price):
+        list_with_current_item.append(current_item_name)
+        all_lists.append(list_with_current_item)
+
+    print(f"Excluding '{current_item_name}'")
+    lists_without_current_item = grocery_budget(grocery_list[1:], budget)
+    all_lists += lists_without_current_item
+
+    print(f"Returning from list: {grocery_list} → {all_lists}")
+    return all_lists
 
 grocery_budget([  
   ('eggs', 5),
